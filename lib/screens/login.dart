@@ -100,6 +100,7 @@ class _LoginState extends State<Login> {
                 style: TextStyle(fontSize: 18),
               ),
             ),
+
             SizedBox(height: 20), // Spacing between buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
