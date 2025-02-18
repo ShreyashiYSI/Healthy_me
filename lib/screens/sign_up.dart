@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:healthy_me/screens/home.dart';
-import 'package:healthy_me/screens/welcome_page.dart';
+import 'package:healthy_me/screens/login.dart';
 import 'package:healthy_me/widgets/custom_image.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   bool _obsecureText = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +24,7 @@ class _LoginState extends State<Login> {
                 children: <Widget>[
                   //Welcome Back
                   Text(
-                    'Welcome Back',
+                    'Hello Beautiful',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w400,
@@ -34,7 +32,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   //Login
-                  Text('Login',
+                  Text('Sign Up',
                       style: TextStyle(
                         fontSize: 36,
                         fontWeight: FontWeight.bold,
@@ -48,6 +46,17 @@ class _LoginState extends State<Login> {
                   ),
                   //spacing
                   SizedBox(height: 30),
+
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Full Name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 20),
 
                   TextField(
                     decoration: InputDecoration(
@@ -91,8 +100,8 @@ class _LoginState extends State<Login> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Home()));
+                      //Login button action
+                      //home page
                     },
                     style: ElevatedButton.styleFrom(
                       padding:
@@ -106,7 +115,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     child: Text(
-                      'Login',
+                      'Sign Up',
                       style: TextStyle(fontSize: 18),
                     ),
                   ),
@@ -115,16 +124,16 @@ class _LoginState extends State<Login> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account?"),
+                      Text("Already have an account?"),
                       TextButton(
                           onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => WelcomePage()));
+                                    builder: (context) => Login()));
                           },
                           child: Text(
-                            'Sign Up',
+                            'Login',
                             style: TextStyle(color: Color(0xFF5A5A97)),
                           ))
                     ],

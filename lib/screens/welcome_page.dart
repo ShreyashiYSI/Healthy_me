@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:healthy_me/screens/login.dart';
+import 'package:healthy_me/screens/sign_up.dart';
 import 'package:healthy_me/widgets/custom_image.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -46,7 +47,8 @@ class _WelcomePageState extends State<WelcomePage> {
             // Spacing between image and buttons
             ElevatedButton(
               onPressed: () {
-                // Sign Up button action
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (context) => SignUp()));
               },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(horizontal: 90, vertical: 15),
